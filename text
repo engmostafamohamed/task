@@ -1,0 +1,15 @@
+SELECT `warehouse` from inventory GROUP by(`warehouse`);
+
+
+SELECT * FROM `inventory` WHERE `warehouse` = 'Production requirements';
+
+SELECT SUM(`Number of item`) FROM `inventory` WHERE `warehouse` = 'Production requirements' GROUP BY(Mon);
+SELECT SUM(`Number of item`) as 'one', SUM(`actual`) as 'tow' FROM `inventory` WHERE `warehouse` = 'Production requirements' GROUP BY(Mon);
+
+SELECT `Mon`as 'month', SUM(`Number of item`) as 'sumnum', SUM(`actual`) as 'sumact', sum(`diffrent`) as 'sumdif' FROM `inventory` WHERE `warehouse` = 'Production requirements' GROUP BY(Mon);
+
+SELECT SUM(`Number of item`) as 'sumnum', SUM(`actual`) as 'sumact', sum(`diffrent`) as 'sumdif' FROM `inventory` WHERE `year` = '2010' GROUP BY(year);
+
+SELECT SUM(`Number of item`) as 'sumnum', SUM(`actual`) as 'sumact', sum(`diffrent`) as 'sumdif' FROM `inventory`;
+
+INSERT INTO `inventory` (`id`, `year`, `Mon`, `warehouse`, `Number of item`, `actual`, `diffrent`, `rate`, `%`) VALUES ('6', '2010', 'october', 'Production requirements', '70', '88', '18', '60', '50');
